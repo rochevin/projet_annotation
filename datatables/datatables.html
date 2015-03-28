@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data_tables</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="dataTables.tableTools.css">
+    <link rel="stylesheet" type="text/css" href="Scroller/css/dataTables.scroller.css">
+    <link rel="stylesheet" type="text/css" href="colReorder/css/dataTables.colReorder.css">
+    <style type="text/css" class="init">
+    td.details-control {
+    background: url('resources/details_open.png') no-repeat center center;
+    cursor: pointer;
+    }
+    tr.shown td.details-control {
+    background: url('resources/details_close.png') no-repeat center center;
+    }
+    </style>
+    <!--<script type="text/javascript" language="javascript" src="../media/js/jquery.js"></script>-->
+    <script type="text/javascript" language="javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" language="javascript" src="jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="dataTables.bootstrap.js"></script>
+    <script type="text/javascript" language="javascript" src="Scroller/js/dataTables.scroller.js"></script>
+    <script type="text/javascript" language="javascript" src="dataTables.tableTools.js"></script>
+    <script type="text/javascript" language="javascript" src="colReorder/js/dataTables.colReorder.js"></script>
+    <script type="text/javascript" class="init">
+    /* Formatting function for row details - modify as you need */
+    function format ( d ) {
+        // `d` is the original data object for the row
+        return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
+            '<thead><tr>'+
+                '<th>Gene Onthology</th><th class="dt-head-center">Transcrit Access Number</th><th class="dt-head-center">Graphical View</th></thead>'+
+                '<td><div style="width:600px;height:200px;overflow:auto">'+d.GO+'</div></td>'+
+                '<td><div style="text-align:center;width:300px;height:150px;overflow:auto">'+d.idtrans+'</div></td>'+
+                '<td>'+d.PS_Limits+'</td>'+
+                
+            '</tr>'+
+        '</table>';
+    }
+    $(document).ready(function() {
+        var table = $('#example').DataTable( {
+            "ajax": "ajax/data/Data.txt",
+            "scrollY": "450px",
+            "scrollX": "600px",
+            "deferRender": true,
+            "dom": 'T<"clear">lfrtip',
+            "sDom": 'RClfrtip',
+            "columns": [
+                {
+                    "className":      'details-control',
+                    "orderable":      false,
+                    "data":           null,
+                    "defaultContent": ''
+                },
+                { "data": "Name" },
+                { "data": "NCBI" },
+                { "data": "Ensembl" },
+                { "data": "Uniprot" },
+                { "data": "Prosite" },
+                { "data": "Pfam" },
+                { "data": "KEGG" },
+                { "data": "Protein_Int" },
+                { "data": "PDB" }
+            ],
+            "order": [[1, 'asc']]
+        } );
+        // Add event listener for opening and closing details
+        $('#example tbody').on('click', 'td.details-control', function () {
+            var tr = $(this).closest('tr');
+            var row = table.row( tr );
+     
+            if ( row.child.isShown() ) {
+                // This row is already open - close it
+                row.child.hide();
+                tr.removeClass('shown');
+            }
+            else {
+                // Open this row
+                row.child( format(row.data()) ).show();
+                tr.addClass('shown');
+            }
+        } );
+    } );
+    </script>
+</head>
+<body style="font-size: 120%" class="wide comments example">
+    <header style="height:30px;"></header>
+    <table id="example" class="table table-striped table-bordered dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th class="dt-head-center">Gene symbol</th>
+                            <th class="dt-head-center">NCBI(Gene/Refseq)</th>
+                            <th class="dt-head-center">Ensembl</th>
+                            <th class="dt-head-center">Uniprot</th>
+                            <th class="dt-head-center">Prosite</th>
+                            <th class="dt-head-center">Pfam</th>
+                            <th class="dt-head-center">Kegg</th>
+                            <th class="dt-head-center">String</th>
+                            <th class="dt-head-center">PDB</th>
+                        </tr>
+                    </thead>
+                </table>
+</body>
+</html>

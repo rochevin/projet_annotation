@@ -1,0 +1,18 @@
+{
+    "data": [
+             {
+            "Name":"<table style='width:110px;'><thead><tr><th>Gene symbol</th></thead><tr><td>RAD51 HUMAN</td></tr></table>",
+            "NCBI":"<table style='width:500px'><thead><tr><th>Official Full Name</th><th>Transcrit Access Number</th><th>Protein Access Number</th></thead><tr><td>RAD51 recombinase</td><td>NM_001164269.1</td><td>NP_001157741.1</td></tr></table>",
+            "Ensembl":"<table style='width:700px'><thead><tr><th>Gene Access Number</th><th>Location</th><th>Transcrit Access Number</th><th>Protein Access Number</th></thead><tr><td>ENSG00000051180</td><td>15:40694774-40732339</td><td>ENST00000267868</td><td>ENSP0000026786</td></tr></table>",
+            "Uniprot":"<table style='width:400px'><thead><tr><th>Protein name</th><th>Protein Access Number</th></thead><tr><td>DNA repair-protein RAD51 homolog 1</td><td>Q06609</td></tr></table>",
+            "Prosite":"<table style='width:300px'><thead><tr><th>Domain Access Number</th><th>Domain ID</th></thead><tr><td>PS50162</td><td>RECA_2</td></tr></table>",
+            "Pfam":"<table style='width:200px'><thead><tr><th>Access Number</th><th>Domain ID</th></thead><tr><td>PF08423</td><td>Rad51</td></tr></table>",
+            "KEGG":"<table style='width:300px'><thead><tr><th>Access Number</th><th>Pathway Access Number</th></thead><tr><td>hsa:5888</td><td>hsa03440</td></tr></table>",
+            "Protein_Int":"<table style='width:200px'><thead><tr><th>STRING</th><tr><td>Link</td></tr></table>",
+            "PDB":"<table style='width:400px'><thead><tr><th>Structural Access Number</th><th>Structural domain name</th></thead><tr><td>hsa:1b22</td><td>N-terminal Domain</td></tr></table>",
+            "idtrans": "ENST0000 <br> ENST0000 <br> ENST0000 <br> ENST0000 <br> ENST0000 <br> ENST0000 <br> ENST0000",
+            "PS_Limits":"<table><thead><tr><th>Domain ID</th><th>Start</th><th>End</th></thead><tr><td>RECA_2</td><td>98</td><td>209</td></tr><tr><td><img src='http://prosite.expasy.org/cgi-bin/prosite/PSImage.cgi?hit=98,269,PS50162,RECA_2+276,339,PS50163,RECA_3&type=1&len=339&hscale=0.6' alt='' /></td></tr></table>",
+            "GO":"<table><thead><tr><th>Function</th><th>Process</th><th>Component</th></thead><tr><td>GO:0000166 <br> GO:0000166 <br> GO:0000166</td><td>GO:0000166 <br> GO:0000166 <br> GO:0000166</td><td>GO:0000166 <br> GO:0000166 <br> GO:0000166</td></tr></table> "
+        }
+    ]
+}
